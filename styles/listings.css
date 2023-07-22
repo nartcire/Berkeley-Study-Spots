@@ -1,9 +1,10 @@
 .listing-section {
-    min-width: 200px;
+    min-width: 1100px;
     max-width: 1600px;
 
     margin-left: 290px;
     margin-right: 60px;
+    margin-bottom: 30px;
 
     display: flex;
     flex-direction: column;

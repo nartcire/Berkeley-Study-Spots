@@ -9,7 +9,9 @@ let listings = [
         outlets: true,
         restrooms: true,
         public: false,
-        address: "Doe Library, Campanile Way, Berkeley, CA 94720"
+        address: "Doe Library, Campanile Way, Berkeley, CA 94720",
+        img: "/photos/Doe_Memorial_Library.jpeg",
+        imgAlt: "Photo of Doe Memorial Library"
     },
     {
         name: "Moffit Library 4th Floor",
@@ -21,7 +23,9 @@ let listings = [
         outlets: true,
         restrooms: true,
         public: false,
-        address: "Doe Library, Campanile Way, Berkeley, CA 94720"
+        address: "Doe Library, Campanile Way, Berkeley, CA 94720",
+        img: "/photos/Moffit_Library_4th_Floor.jpeg",
+        imgAlt: "Photo of Moffit Library 4th Floor"
     },
     {
         name: "Free Speech Movement Cafe",
@@ -33,7 +37,9 @@ let listings = [
         outlets: false,
         restrooms: false,
         public: true,
-        address: "3rd Floor, UC, University Dr, Berkeley, CA 94720"
+        address: "3rd Floor, UC, University Dr, Berkeley, CA 94720",
+        img: "/photos/Free_Speech_Movement.jpeg",
+        imgAlt: "Photo of Free Speech Movement Cafe",
     },
     {
         name: "East Asian Library",
@@ -45,6 +51,22 @@ let listings = [
         outlets: true,
         restrooms: true,
         public: false,
-        address: "C. V. Starr East Asian Library, Berkeley, CA 94720"
+        address: "C. V. Starr East Asian Library, Berkeley, CA 94720",
+        img: "/photos/East_Asian_Library.webp",
+        imgAlt: "Photo of East Asian Library"
+    },
+    {
+        name: "V&A Cafe",
+        numOfStars: 4,
+        wifi: true,
+        foodDrink: true,
+        quietSpace: false,
+        onCampus: true,
+        outlets: false,
+        restrooms: false,
+        public: true,
+        address: "2521 Hearst Ave Berkeley, CA 94709",
+        img: "/photos/VA_Cafe.jpg",
+        imgAlt: "Photo of V&A Cafe"
     }
 ]

@@ -1,5 +1,6 @@
 .header {
     height: 30px;
+    min-width: max-content;
     position: fixed;
     top: 0px;
     right: 0px;
@@ -14,9 +15,20 @@
     align-items: center;
 }
 
+.website-title {
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+}
+
 .navigation-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 25px;
+    margin-left: 30px;
+}
+
+.navigation-options div {
+    cursor: pointer;
 }
