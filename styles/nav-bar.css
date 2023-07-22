@@ -1,0 +1,22 @@
+.header {
+    height: 30px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    font-size: 36px;
+    padding: 20px 15px;
+    color: #FDB515;
+    background-color: #003262;
+    font-family: 'Abhaya Libre', serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}

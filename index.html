@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Berkeley Study Spots</title>
+    <link rel="stylesheet" href="styles/nav-bar.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/filter.css">
+    <link rel="stylesheet" href="styles/listings.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div style="font-weight: bold; font-size: 40px;">
+            Berkeley Study Spots
+        </div>
+        <div class="navigation-options">
+            <div>
+                Home
+            </div>
+            <div>
+                About
+            </div>
+            <div>
+                Feedback
+            </div>
+        </div>
+    </div>
+
+    <div class="main-section">
+        <div class="filter-bar">
+            <div class="location">
+                <div class="filter-labels">
+                    Location
+                </div>
+
+                <input type="text">
+            </div>
+
+            <div>
+                <hr>
+            </div>
+
+            <div class="amenities">
+                <div class="filter-labels">
+                    Amenities
+                </div>
+
+                <div>
+                    <input type="checkbox" name="Wifi" id="wifi">
+                    Wifi
+                </div>
+                <div>
+                    <input type="checkbox" name="Food/Drink" id="food/drink">
+                    Food/Drink
+                </div>
+                <div>
+                    <input type="checkbox" name="Quiet-Space" id="quiet-space">
+                    Quiet Space
+                </div>
+                <div>
+                    <input type="checkbox" name="On-Campus" id="on-campus">
+                    On Campus
+                </div>
+                <div>
+                    <input type="checkbox" name="Outlets" id="outlets">
+                    Outlets
+                </div>
+                <div>
+                    <input type="checkbox" name="Restrooms" id="restrooms">
+                    Restrooms
+                </div>
+                <div>
+                    <input type="checkbox" name="Public" id="public">
+                    Public
+                </div>
+            </div>
+
+            <div>
+                <hr>
+            </div>
+
+            <div class="ratings">
+                <div class="filter-labels">
+                    Ratings
+                </div>
+                <div>
+                    <input type="radio" id="four-stars" name="star-ratings">
+                    &#9733;
+                    &#9733;
+                    &#9733;
+                    &#9733;
+                    &#9734;
+                    & Up
+                </div>
+                <div>
+                    <input type="radio" id="three-stars" name="star-ratings">
+                    &#9733;
+                    &#9733;
+                    &#9733;
+                    &#9734;
+                    &#9734;
+                    & Up
+                </div>
+                <div>
+                    <input type="radio" id="two-stars" name="star-ratings">
+                    &#9733;
+                    &#9733;
+                    &#9734;
+                    &#9734;
+                    &#9734;
+                    & Up
+                </div>
+                <div>
+                    <input type="radio" id="one-star" name="star-ratings">
+                    &#9733;
+                    &#9734;
+                    &#9734;
+                    &#9734;
+                    &#9734;
+                    & Up
+                </div>
+            </div>
+        </div>
+
+        <div class="listing-section">
+            <div class="listing">
+                <img src="/photos/Doe_Memorial_Library.jpeg" alt="Photo of Doe Memorial Library">
+
+                <div class="listing_information">
+                    <div class="listing_top">
+                        <div class="listing_title">
+                            Doe Memorial Library
+                        </div>
+                        <div class="listing_stars">
+                            &#9733;
+                            &#9733;
+                            &#9733;
+                            &#9733;
+                            &#9733;
+                        </div>
+                    </div>
+
+                    <div class="listing_bottom">
+                        <div>
+                            Wifi: Yes
+                        </div>
+                        <div>
+                            Food/Drink Allowed: No
+                        </div>
+                        <div>
+                            Quiet Space: Yes
+                        </div>
+                        <div>
+                            Address: Doe Library, Campanile Way, Berkeley, CA 94720
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="listing">
+                <img src="/photos/Moffit_Library_4th_Floor.jpeg" alt="Photo of Moffit Library">
+
+                <div class="listing_information">
+                    <div class="listing_top">
+                        <div class="listing_title">
+                            Moffit Library 4th Floor
+                        </div>
+                        <div class="listing_stars">
+                            &#9734;
+                            &#9734;
+                            &#9734;
+                            &#9734;
+                            &#9734;
+                        </div>
+                    </div>
+
+                    <div class="listing_bottom">
+                        <div>
+                            Wifi: Yes
+                        </div>
+                        <div>
+                            Food/Drink Allowed: Yes
+                        </div>
+                        <div>
+                            Quiet Space: No
+                        </div>
+                        <div>
+                            Address: 350 Moffit Library, Berkeley, CA 94720
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="listing">
+                <img src="/photos/Free_Speech_Movement.jpeg" alt="Photo of Free Speech Movement Cafe">
+
+                <div class="listing_information">
+                    <div class="listing_top">
+                        <div class="listing_title">
+                            Free Speech Movement Cafe
+                        </div>
+                        <div class="listing_stars">
+                            &#9733;
+                            &#9733;
+                            &#9733;
+                            &#9733;
+                            &#9734;
+                        </div>
+                    </div>
+
+                    <div class="listing_bottom">
+                        <div>
+                            Wifi: Yes
+                        </div>
+                        <div>
+                            Food/Drink Allowed: Yes
+                        </div>
+                        <div>
+                            Quiet Space: No
+                        </div>
+                        <div>
+                            Address: 3rd Floor, UC, University Dr, Berkeley, CA 94720
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="listing">
+                <img src="/photos/East_Asian_Library.webp" alt="Photo of East Asian Library">
+
+                <div class="listing_information">
+                    <div class="listing_top">
+                        <div class="listing_title">
+                            East Asian Library
+                        </div>
+                        <div class="listing_stars">
+                            &#9733;
+                            &#9733;
+                            &#9733;
+                            &#9734;
+                            &#9734;
+                        </div>
+                    </div>
+
+                    <div class="listing_bottom">
+                        <div>
+                            Wifi: Yes
+                        </div>
+                        <div>
+                            Food/Drink Allowed: No
+                        </div>
+                        <div>
+                            Quiet Space: Yes
+                        </div>
+                        <div>
+                            Address: C. V. Starr East Asian Library, Berkeley, CA 94720
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

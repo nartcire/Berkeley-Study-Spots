@@ -1,0 +1,63 @@
+.filter-bar {
+    font-family: 'Roboto', sans-serif;
+
+    position: fixed;
+    left: 60px;
+    bottom: 80px;
+    top: 110px;
+
+    background-color: white;
+    width: 200px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+hr {
+    width: 185px;
+}
+
+.filter-labels {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Location Section */
+
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.location input {
+    background-color: #D9D9D9;
+    border-width: 1px;
+    height: 20px;
+}
+
+/* Amenities Section */
+
+.amenities {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+/* Ratings Section */
+
+.ratings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: 10px;
+    font-weight: 500;
+}
