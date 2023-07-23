@@ -54,7 +54,9 @@ function showListings() {
 
 showListings();
 
-filters = document.querySelectorAll(".amenities input");
+
+//Give each amenities filter an event listening for onclick to reload the listings when toggled
+const filters = document.querySelectorAll(".amenities input");
 
 filters.forEach((filter) => {
     filter.addEventListener('click', () => {
@@ -62,24 +64,45 @@ filters.forEach((filter) => {
     });
 });
 
+//Give each of the star rating filters and event listener for clicks to relead the listings when toggeled
+const starRatings = document.querySelectorAll('input[name="star-ratings"]');
+
+starRatings.forEach((starRating) => {
+    starRating.addEventListener('click', () => {
+        showListings();
+    });
+});
+
 
 //Function to check whether or not a listing should be displayed based on the filters that are checked on
 function checkFilter(listing) {
-    wifiFilter = document.querySelector("#wifi").checked;
-    foodDrinkFilter = document.querySelector("#food-drink").checked;
-    quietSpaceFilter = document.querySelector("#quiet-space").checked;
-    onCampusFilter = document.querySelector("#on-campus").checked;
-    outletsFilter = document.querySelector("#outlets").checked;
-    restroomsFilter = document.querySelector("#restrooms").checked;
-    publicFilter = document.querySelector("#public").checked;
+    //Find the star rating
+    const ratings = document.querySelectorAll("input[name='star-ratings']");
+    let starFilter = 0;
 
-    wifiBool = !wifiFilter || listing.wifi;
-    foodDrinkBool = !foodDrinkFilter || listing.foodDrink;
-    quietSpaceBool = !quietSpaceFilter || listing.quietSpace;
-    onCampusBool = !onCampusFilter || listing.onCampus;
-    outletsBool = !outletsFilter || listing.outlets;
-    restroomsBool = !restroomsFilter || listing.restrooms;
-    publicBool = !publicFilter || listing.public;
+    ratings.forEach((rating) => {
+        if (rating.checked) {
+            starFilter = Number(rating.value);
+            return;
+        }
+    })
 
-    return wifiBool && foodDrinkBool && quietSpaceBool && onCampusBool && outletsBool && restroomsBool && publicBool;
+    const wifiFilter = document.querySelector("#wifi").checked;
+    const foodDrinkFilter = document.querySelector("#food-drink").checked;
+    const quietSpaceFilter = document.querySelector("#quiet-space").checked;
+    const onCampusFilter = document.querySelector("#on-campus").checked;
+    const outletsFilter = document.querySelector("#outlets").checked;
+    const restroomsFilter = document.querySelector("#restrooms").checked;
+    const publicFilter = document.querySelector("#public").checked;
+
+    const starBool = starFilter <= listing.numOfStars;
+    const wifiBool = !wifiFilter || listing.wifi;
+    const foodDrinkBool = !foodDrinkFilter || listing.foodDrink;
+    const quietSpaceBool = !quietSpaceFilter || listing.quietSpace;
+    const onCampusBool = !onCampusFilter || listing.onCampus;
+    const outletsBool = !outletsFilter || listing.outlets;
+    const restroomsBool = !restroomsFilter || listing.restrooms;
+    const publicBool = !publicFilter || listing.public;
+
+    return starBool && wifiBool && foodDrinkBool && quietSpaceBool && onCampusBool && outletsBool && restroomsBool && publicBool;
 }
