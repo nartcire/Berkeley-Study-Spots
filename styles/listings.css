@@ -39,8 +39,9 @@
     font-size: 50px;
 }
 
-.listing_stars {
-    font-size: 20px;
+.listing_stars img {
+    width: 150px;
+    height: 30px;
 }
 
 .listing_bottom {

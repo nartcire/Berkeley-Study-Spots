@@ -61,3 +61,14 @@ hr {
     margin-left: 10px;
     font-weight: 500;
 }
+
+.ratings div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.ratings div img {
+    width: 110px;
+}
