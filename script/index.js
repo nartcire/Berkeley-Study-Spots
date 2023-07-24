@@ -49,9 +49,9 @@ function showListings() {
                     </div>
                 </div>
 
-                <div class="listing_location_icon">
-                        <img src="/photos/general/location_icon.png"/>
-                </div>
+                <a href="${listing.googleLink}" class="listing_location_icon" target="_blank">
+                    <img src="/photos/general/location_icon.png"/>
+                </a>
             </div>
         `;
     });
