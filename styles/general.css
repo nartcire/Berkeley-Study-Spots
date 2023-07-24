@@ -6,3 +6,21 @@ body {
 .main-section {
     margin-top: 110px;
 }
+
+.individual-listing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 110px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    min-height: 82vh;
+
+    /*
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    */
+}

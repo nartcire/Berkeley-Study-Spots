@@ -1,0 +1,39 @@
+.left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-family: 'Roboto', sans-serif;
+
+    /*
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    */
+}
+
+.general-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.study-spot-img {
+    height: 450px;
+    width: 800px;
+    object-fit: cover;
+}
+
+.listing-name {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.listing-address {
+    font-size: 25px;
+}
+
+.star-rating-img {
+    width: 150px;
+}
