@@ -3,47 +3,54 @@ function showListings() {
     let listingHTML = '';
 
     listings.forEach((listing) => {
-        displayBool = checkFilter(listing);
+        const displayBool = checkFilter(listing);
 
         if (!displayBool) {
             return;
         }
 
-        wifi = listing.wifi ? "Yes" : "No";
-        foodDrink = listing.foodDrink ? "Yes" : "No";
-        quietSpace = listing.quietSpace ? "Yes" : "No";
-        starRating = `/photos/ratings/rating-${listing.numOfStars * 10}.png`;
+        const wifi = listing.wifi ? "Yes" : "No";
+        const foodDrink = listing.foodDrink ? "Yes" : "No";
+        const quietSpace = listing.quietSpace ? "Yes" : "No";
+        const starRating = `/photos/ratings/rating-${listing.numOfStars * 10}.png`;
 
 
 
         listingHTML += `
-            <div class="listing">
-                <img src="${listing.img}" alt="${listing.imgAlt}">
+            <div class="left_right_listing">
+                <div class="listing">
+                    <img src="${listing.img}" alt="${listing.imgAlt}">
 
-                <div class="listing_information">
-                    <div class="listing_top">
-                        <div class="listing_title">
-                            ${listing.name}
+                    <div class="listing_information">
+
+                        <div class="listing_top">
+                            <div class="listing_title">
+                                ${listing.name}
+                            </div>
+                            <div class="listing_stars">
+                                <img src="${starRating}">
+                            </div>
                         </div>
-                        <div class="listing_stars">
-                            <img src="${starRating}">
+
+                        <div class="listing_bottom">
+                            <div>
+                                Wifi: ${wifi}
+                            </div>
+                            <div>
+                                Food/Drink Allowed: ${foodDrink}
+                            </div>
+                            <div>
+                                Quiet Space: ${quietSpace}
+                            </div>
+                            <div>
+                                Address: ${listing.address}
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="listing_bottom">
-                        <div>
-                            Wifi: ${wifi}
-                        </div>
-                        <div>
-                            Food/Drink Allowed: ${foodDrink}
-                        </div>
-                        <div>
-                            Quiet Space: ${quietSpace}
-                        </div>
-                        <div>
-                            Address: ${listing.address}
-                        </div>
-                    </div>
+                <div class="listing_location_icon">
+                        <img src="/photos/general/location_icon.png"/>
                 </div>
             </div>
         `;
@@ -52,6 +59,7 @@ function showListings() {
     document.querySelector(".listing-section").innerHTML = listingHTML;
 }
 
+//Call function to show listing
 showListings();
 
 
