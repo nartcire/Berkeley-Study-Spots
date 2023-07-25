@@ -18,7 +18,7 @@ function showListings() {
 
         listingHTML += `
             <div class="left_right_listing">
-                <div class="listing">
+                <a href="listing.html?value=${listing.ID}" class="listing">
                     <img src="${listing.img}" alt="${listing.imgAlt}">
 
                     <div class="listing_information">
@@ -47,7 +47,7 @@ function showListings() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <a href="${listing.googleLink}" class="listing_location_icon" target="_blank">
                     <img src="/photos/general/location_icon.png"/>
@@ -63,7 +63,7 @@ function showListings() {
 showListings();
 
 
-//Give each amenities filter an event listening for onclick to reload the listings when toggled
+//Give each amenities filter an event listener for onclick to reload the listings when toggled
 const filters = document.querySelectorAll(".amenities input");
 
 filters.forEach((filter) => {
@@ -72,8 +72,7 @@ filters.forEach((filter) => {
     });
 });
 
-//Give each of the star rating filters and event listener for clicks to relead the listings when toggeled
-const starRatings = document.querySelectorAll('input[name="star-ratings"]');
+const starRatings = document.querySelectorAll("input[name='star-ratings']");
 
 starRatings.forEach((starRating) => {
     starRating.addEventListener('click', () => {

@@ -1,15 +1,10 @@
 .right-section {
-    /*
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    */
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: white;
     width: 500px;
+    min-width: 500px;
 }
 
 .amenities {
@@ -31,8 +26,7 @@
     margin-bottom: 5px;
 }
 
-.check-mark,
-.x-mark {
+.mark {
     object-fit: cover;
     height: 25px;
 }
