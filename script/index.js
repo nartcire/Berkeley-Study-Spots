@@ -1,22 +1,43 @@
+// Fetch All of the Listings from API
+function fetchListings() {
+  window
+    .fetch("http://localhost:5020/")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      } else {
+        return response.json();
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      return JSON.parse(data);
+    })
+    .catch((error) => {
+      console.log("fetch error:", error);
+    });
+}
+
+//Call the fetchListings function
+const listings = fetchListings();
+
 //Function that generates the HTML for the listings to be shown on the index webpage
 function showListings() {
-    let listingHTML = '';
+  let listingHTML = "";
 
-    listings.forEach((listing) => {
-        const displayBool = checkFilter(listing);
+  listings.forEach((listing) => {
+    const displayBool = checkFilter(listing);
 
-        if (!displayBool) {
-            return;
-        }
+    if (!displayBool) {
+      return;
+    }
 
-        const wifi = listing.wifi ? "Yes" : "No";
-        const foodDrink = listing.foodDrink ? "Yes" : "No";
-        const quietSpace = listing.quietSpace ? "Yes" : "No";
-        const starRating = `/photos/ratings/rating-${listing.numOfStars * 10}.png`;
+    const wifi = listing.wifi ? "Yes" : "No";
+    const foodDrink = listing.foodDrink ? "Yes" : "No";
+    const quietSpace = listing.quietSpace ? "Yes" : "No";
+    const starRating = `/photos/ratings/rating-${listing.numOfStars * 10}.png`;
 
-
-
-        listingHTML += `
+    listingHTML += `
             <div class="left_right_listing">
                 <a href="listing.html?value=${listing.ID}" class="listing">
                     <img src="${listing.img}" alt="${listing.imgAlt}">
@@ -54,62 +75,71 @@ function showListings() {
                 </a>
             </div>
         `;
-    });
+  });
 
-    document.querySelector(".listing-section").innerHTML = listingHTML;
+  document.querySelector(".listing-section").innerHTML = listingHTML;
 }
 
 //Call function to show listing
 showListings();
 
-
 //Give each amenities filter an event listener for onclick to reload the listings when toggled
 const filters = document.querySelectorAll(".amenities input");
 
 filters.forEach((filter) => {
-    filter.addEventListener('click', () => {
-        showListings();
-    });
+  filter.addEventListener("click", () => {
+    showListings();
+  });
 });
+
+//Give each star rating filter an event listener for onclock to reload the listings when toggled
 
 const starRatings = document.querySelectorAll("input[name='star-ratings']");
 
 starRatings.forEach((starRating) => {
-    starRating.addEventListener('click', () => {
-        showListings();
-    });
+  starRating.addEventListener("click", () => {
+    showListings();
+  });
 });
-
 
 //Function to check whether or not a listing should be displayed based on the filters that are checked on
 function checkFilter(listing) {
-    //Find the star rating
-    const ratings = document.querySelectorAll("input[name='star-ratings']");
-    let starFilter = 0;
+  //Find the star rating
+  const ratings = document.querySelectorAll("input[name='star-ratings']");
+  let starFilter = 0;
 
-    ratings.forEach((rating) => {
-        if (rating.checked) {
-            starFilter = Number(rating.value);
-            return;
-        }
-    })
+  ratings.forEach((rating) => {
+    if (rating.checked) {
+      starFilter = Number(rating.value);
+      return;
+    }
+  });
 
-    const wifiFilter = document.querySelector("#wifi").checked;
-    const foodDrinkFilter = document.querySelector("#food-drink").checked;
-    const quietSpaceFilter = document.querySelector("#quiet-space").checked;
-    const onCampusFilter = document.querySelector("#on-campus").checked;
-    const outletsFilter = document.querySelector("#outlets").checked;
-    const restroomsFilter = document.querySelector("#restrooms").checked;
-    const publicFilter = document.querySelector("#public").checked;
+  const wifiFilter = document.querySelector("#wifi").checked;
+  const foodDrinkFilter = document.querySelector("#food-drink").checked;
+  const quietSpaceFilter = document.querySelector("#quiet-space").checked;
+  const onCampusFilter = document.querySelector("#on-campus").checked;
+  const outletsFilter = document.querySelector("#outlets").checked;
+  const restroomsFilter = document.querySelector("#restrooms").checked;
+  const publicFilter = document.querySelector("#public").checked;
 
-    const starBool = starFilter <= listing.numOfStars;
-    const wifiBool = !wifiFilter || listing.wifi;
-    const foodDrinkBool = !foodDrinkFilter || listing.foodDrink;
-    const quietSpaceBool = !quietSpaceFilter || listing.quietSpace;
-    const onCampusBool = !onCampusFilter || listing.onCampus;
-    const outletsBool = !outletsFilter || listing.outlets;
-    const restroomsBool = !restroomsFilter || listing.restrooms;
-    const publicBool = !publicFilter || listing.public;
+  const starBool = starFilter <= listing.numOfStars;
+  const wifiBool = !wifiFilter || listing.wifi;
+  const foodDrinkBool = !foodDrinkFilter || listing.foodDrink;
+  const quietSpaceBool = !quietSpaceFilter || listing.quietSpace;
+  const onCampusBool = !onCampusFilter || listing.onCampus;
+  const outletsBool = !outletsFilter || listing.outlets;
+  const restroomsBool = !restroomsFilter || listing.restrooms;
+  const publicBool = !publicFilter || listing.public;
 
-    return starBool && wifiBool && foodDrinkBool && quietSpaceBool && onCampusBool && outletsBool && restroomsBool && publicBool;
+  return (
+    starBool &&
+    wifiBool &&
+    foodDrinkBool &&
+    quietSpaceBool &&
+    onCampusBool &&
+    outletsBool &&
+    restroomsBool &&
+    publicBool
+  );
 }

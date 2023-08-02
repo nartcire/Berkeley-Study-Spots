@@ -4,7 +4,9 @@
   "description": "Personal Project on Berkeley Study Spot Website Concept",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -16,11 +18,11 @@
     "url": "https://github.com/nartcire/Berkeley-Study-Spots/issues"
   },
   "homepage": "https://github.com/nartcire/Berkeley-Study-Spots#readme",
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  },
   "dependencies": {
     "express": "^4.18.2",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
