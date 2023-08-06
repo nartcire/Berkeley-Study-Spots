@@ -1,28 +1,36 @@
-// Fetch All of the Listings from API
-function fetchListings() {
-  window
-    .fetch("http://localhost:5020/")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      } else {
-        return response.json();
-      }
-    })
-    .then((data) => {
-      console.log(data);
-      return JSON.parse(data);
-    })
-    .catch((error) => {
-      console.log("fetch error:", error);
-    });
-}
+// // Fetch All of the Listings from API
+// async function fetchListings() {
+//   await axios
+//     .get("http://localhost:5020")
+//     .then((res) => {
+//       listings = res.data;
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+
+//   console.log(listings);
+//   return 1;
+// }
 
 //Call the fetchListings function
-const listings = fetchListings();
+// fetchListings();
+// console.log(typeof listings);
+// console.log(listings);
 
 //Function that generates the HTML for the listings to be shown on the index webpage
-function showListings() {
+async function showListings() {
+  let listings;
+
+  await axios
+    .get("http://localhost:5020")
+    .then((res) => {
+      listings = res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
   let listingHTML = "";
 
   listings.forEach((listing) => {

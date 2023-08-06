@@ -11,7 +11,7 @@ let listings = [
     restrooms: true,
     public: false,
     address: "Doe Library, Campanile Way, Berkeley, CA 94720",
-    img: "/photos/studySpots/Doe_Memorial_Library.jpeg",
+    img: "../photos/studySpots/Doe_Memorial_Library.jpeg",
     imgAlt: "Photo of Doe Memorial Library",
     googleLink: "https://goo.gl/maps/w3ytkRa5FiDAQWJdA",
     yelpLink:
@@ -31,7 +31,7 @@ let listings = [
     restrooms: true,
     public: false,
     address: "Doe Library, Campanile Way, Berkeley, CA 94720",
-    img: "/photos/studySpots/Moffit_Library_4th_Floor.jpeg",
+    img: "../photos/studySpots/Moffit_Library_4th_Floor.jpeg",
     imgAlt: "Photo of Moffit Library 4th Floor",
     googleLink: "https://goo.gl/maps/QtABZ4ZJWKxMxDGL7",
     yelpLink:
@@ -51,7 +51,7 @@ let listings = [
     restrooms: false,
     public: true,
     address: "3rd Floor, UC, University Dr, Berkeley, CA 94720",
-    img: "/photos/studySpots/Free_Speech_Movement.jpeg",
+    img: "../photos/studySpots/Free_Speech_Movement.jpeg",
     imgAlt: "Photo of Free Speech Movement Cafe",
     googleLink: "https://goo.gl/maps/FoEp9ZGrUgDgjgYP7",
     yelpLink:
@@ -71,7 +71,7 @@ let listings = [
     restrooms: true,
     public: false,
     address: "C. V. Starr East Asian Library, Berkeley, CA 94720",
-    img: "/photos/studySpots/East_Asian_Library.webp",
+    img: "../photos/studySpots/East_Asian_Library.webp",
     imgAlt: "Photo of East Asian Library",
     googleLink: "https://goo.gl/maps/eaA8AkcPBdRBmvwQA",
     yelpLink:
@@ -91,7 +91,7 @@ let listings = [
     restrooms: false,
     public: true,
     address: "2521 Hearst Ave Berkeley, CA 94709",
-    img: "/photos/studySpots/VA_Cafe.jpg",
+    img: "../photos/studySpots/VA_Cafe.jpg",
     imgAlt: "Photo of V&A Cafe",
     googleLink: "https://goo.gl/maps/3bAcfeHDrppZ5dVT6",
     yelpLink:

@@ -2,46 +2,21 @@
 const urlParams = new URLSearchParams(window.location.search);
 const pageID = urlParams.get("value");
 
-// Fetch Individual Listing from API
-function fetchListings() {
-  window
-    .fetch(`http://localhost:5020/`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      } else {
-        return response.json();
-      }
+generateListingHTML(pageID);
+
+async function generateListingHTML(pageID) {
+  let listing;
+
+  await axios
+    .get(`http://localhost:5020/${pageID}`)
+    .then((res) => {
+      listing = res.data;
     })
-    .then((data) => {
-      console.log(data);
-      return JSON.parse(data);
-    })
-    .catch((error) => {
-      console.log("fetch error:", error);
+    .catch((err) => {
+      console.log(err);
     });
-}
 
-const listings = fetchListings();
-
-console.log(pageID);
-
-listingObj = getListingObject(pageID);
-generateListingHTML(listingObj);
-
-function getListingObject(pageID) {
-  let listingObj;
-
-  listings.forEach((listing) => {
-    if (listing.ID === Number(pageID)) {
-      listingObj = listing;
-    }
-  });
-
-  return listingObj;
-}
-
-function generateListingHTML(listingObj) {
+  const listingObj = listing[0];
   let listingHTML = "";
 
   const checkMark = "/photos/general/checkmark.png";
