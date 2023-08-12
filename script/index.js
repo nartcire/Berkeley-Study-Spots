@@ -1,23 +1,3 @@
-// // Fetch All of the Listings from API
-// async function fetchListings() {
-//   await axios
-//     .get("http://localhost:5020")
-//     .then((res) => {
-//       listings = res.data;
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-
-//   console.log(listings);
-//   return 1;
-// }
-
-//Call the fetchListings function
-// fetchListings();
-// console.log(typeof listings);
-// console.log(listings);
-
 //Function that generates the HTML for the listings to be shown on the index webpage
 async function showListings() {
   let listings;

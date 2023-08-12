@@ -1,104 +1,34 @@
-let listings = [
-  {
-    ID: 1,
-    name: "Doe Memorial Library",
-    numOfStars: 5,
-    wifi: true,
-    foodDrink: false,
-    quietSpace: true,
-    onCampus: true,
-    outlets: true,
-    restrooms: true,
-    public: false,
-    address: "Doe Library, Campanile Way, Berkeley, CA 94720",
-    img: "../photos/studySpots/Doe_Memorial_Library.jpeg",
-    imgAlt: "Photo of Doe Memorial Library",
-    googleLink: "https://goo.gl/maps/w3ytkRa5FiDAQWJdA",
-    yelpLink:
-      "https://www.yelp.com/biz/doe-and-moffitt-libraries-berkeley?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)",
-    googleEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20115.324680423986!2d-122.27395010956985!3d37.86686275303341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857c2422e9051d%3A0x23dc9bdba634a9a8!2sDoe%20Library!5e0!3m2!1sen!2sus!4v1690318621998!5m2!1sen!2sus",
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const uri =
+  "mongodb+srv://erictran1547:ET070502@cluster0.tpldddt.mongodb.net/?retryWrites=true&w=majority";
+
+let listings;
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
   },
-  {
-    ID: 2,
-    name: "Moffit Library 4th Floor",
-    numOfStars: 3,
-    wifi: true,
-    foodDrink: true,
-    quietSpace: false,
-    onCampus: true,
-    outlets: true,
-    restrooms: true,
-    public: false,
-    address: "Doe Library, Campanile Way, Berkeley, CA 94720",
-    img: "../photos/studySpots/Moffit_Library_4th_Floor.jpeg",
-    imgAlt: "Photo of Moffit Library 4th Floor",
-    googleLink: "https://goo.gl/maps/QtABZ4ZJWKxMxDGL7",
-    yelpLink:
-      "https://www.yelp.com/biz/doe-and-moffitt-libraries-berkeley?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)",
-    googleEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.476719570205!2d-122.26341152336667!3d37.872532671961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857c26b82c61c5%3A0x159239deb2d2cfe3!2sMoffitt%20Library!5e0!3m2!1sen!2sus!4v1690235436438!5m2!1sen!2sus",
-  },
-  {
-    ID: 3,
-    name: "Free Speech Movement Cafe",
-    numOfStars: 4.5,
-    wifi: true,
-    foodDrink: true,
-    quietSpace: false,
-    onCampus: true,
-    outlets: false,
-    restrooms: false,
-    public: true,
-    address: "3rd Floor, UC, University Dr, Berkeley, CA 94720",
-    img: "../photos/studySpots/Free_Speech_Movement.jpeg",
-    imgAlt: "Photo of Free Speech Movement Cafe",
-    googleLink: "https://goo.gl/maps/FoEp9ZGrUgDgjgYP7",
-    yelpLink:
-      "https://www.yelp.com/biz/free-speech-movement-cafe-berkeley?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)",
-    googleEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.4749656478325!2d-122.26571891435024!3d37.872573699664045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857edfa8354ceb%3A0xe7730b4336d3cb7!2sFree%20Speech%20Movement%20Cafe!5e0!3m2!1sen!2sus!4v1690318855647!5m2!1sen!2sus",
-  },
-  {
-    ID: 4,
-    name: "East Asian Library",
-    numOfStars: 3,
-    wifi: true,
-    foodDrink: false,
-    quietSpace: true,
-    onCampus: true,
-    outlets: true,
-    restrooms: true,
-    public: false,
-    address: "C. V. Starr East Asian Library, Berkeley, CA 94720",
-    img: "../photos/studySpots/East_Asian_Library.webp",
-    imgAlt: "Photo of East Asian Library",
-    googleLink: "https://goo.gl/maps/eaA8AkcPBdRBmvwQA",
-    yelpLink:
-      "https://www.yelp.com/biz/c-v-starr-east-asian-library-berkeley?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)",
-    googleEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.4749656478325!2d-122.26571891435024!3d37.872573699664045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857c2686b00001%3A0x52e19860b281ef85!2sEast%20Asian%20Library!5e0!3m2!1sen!2sus!4v1690318925393!5m2!1sen!2sus",
-  },
-  {
-    ID: 5,
-    name: "V&A Cafe",
-    numOfStars: 2.5,
-    wifi: true,
-    foodDrink: true,
-    quietSpace: false,
-    onCampus: true,
-    outlets: false,
-    restrooms: false,
-    public: true,
-    address: "2521 Hearst Ave Berkeley, CA 94709",
-    img: "../photos/studySpots/VA_Cafe.jpg",
-    imgAlt: "Photo of V&A Cafe",
-    googleLink: "https://goo.gl/maps/3bAcfeHDrppZ5dVT6",
-    yelpLink:
-      "https://www.yelp.com/biz/v-and-a-cafe-berkeley-2?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)",
-    googleEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.432131122264!2d-122.26255452401946!3d37.87357567196072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857c23d00eb4b5%3A0xd8315337993cff37!2sV%26A%20Cafe!5e0!3m2!1sen!2sus!4v1690318976902!5m2!1sen!2sus",
-  },
-];
+});
+
+async function run(listings) {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!"
+    );
+
+    listings = client.db("BerkeleyStudySpots").collection("listings").find({});
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
 
 module.exports = listings;

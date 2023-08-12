@@ -1,15 +1,53 @@
 const express = require("express");
 const router = express.Router();
-const listings = require("../data/data.js");
 const uuid = require("uuid");
+const { MongoClient, ServerApiVersion } = require("mongodb");
+
+const uri =
+  "mongodb+srv://erictran1547:ET070502@cluster0.tpldddt.mongodb.net/?retryWrites=true&w=majority";
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
 
 // Gets All Listings
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
+  let listings;
+
+  try {
+    await client.connect();
+    listings = await client
+      .db("BerkeleyStudySpots")
+      .collection("listings")
+      .find({})
+      .toArray();
+  } finally {
+    await client.close();
+  }
+
   res.json(listings);
 });
 
 // Get Single Listing
-router.get("/:id", (req, res) => {
+router.get("/:id", async (req, res) => {
+  let listings;
+
+  try {
+    await client.connect();
+    listings = await client
+      .db("BerkeleyStudySpots")
+      .collection("listings")
+      .find({})
+      .toArray();
+  } finally {
+    await client.close();
+  }
+
   const found = listings.some(
     (listing) => listing.ID === Number(req.params.id)
   );
