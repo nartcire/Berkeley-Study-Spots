@@ -94,8 +94,10 @@ starRatings.forEach((starRating) => {
 
 const nameFilter = document.querySelector(".name-search");
 
-nameFilter.addEventListener("keydown", () => {
-  showListings();
+nameFilter.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === 13) {
+    showListings();
+  }
 });
 
 //Function to check whether or not a listing should be displayed based on the filters that are checked on
@@ -120,7 +122,9 @@ function checkFilter(listing) {
   const restroomsFilter = document.querySelector("#restrooms").checked;
   const publicFilter = document.querySelector("#public").checked;
 
-  const nameBool = listing.name.includes(nameFilter);
+  const nameBool = listing.name
+    .toLowerCase()
+    .includes(nameFilter.toLowerCase());
   const starBool = starFilter <= listing.numOfStars;
   const wifiBool = !wifiFilter || listing.wifi;
   const foodDrinkBool = !foodDrinkFilter || listing.foodDrink;

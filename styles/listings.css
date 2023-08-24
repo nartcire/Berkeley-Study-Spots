@@ -13,6 +13,16 @@
     font-family: 'Roboto', sans-serif;
 }
 
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
 .left_right_listing {
     display: flex;
     flex-direction: row;
@@ -20,6 +30,8 @@
 
     background-color: white;
     height: 250px;
+
+    animation: slideInFromRight 1s ease-in-out 0s 1 normal both;
 }
 
 .listing {
