@@ -8,7 +8,9 @@ This was a project that was first started in my second semester in a club called
 
 A website that aims to help incoming or current students of UC Berkeley to find potential study spots on campus and on the immediate surrounding area around campus! The website features filtering tools that will filter out study spot listings that do not match / meet the needs and preferences indicated by the user. Additionally, the user can click on the desired listing to open to another page dedicated to the clicked listing where more information can be found about the study spot! Finally, there are small quality of life features where the user can click on the location icon to open a page of google maps of where the listing is located and links to the yelp of the study spot so that the user can more easily decide on their next study spot.
 
-If you would like to view the current state of the project, please click the link to watch a youtube video of it! ==> https://youtu.be/b6IZlKwep-Y <==
+### Video
+
+If you would like to view the current state of the project, please click the link to watch a youtube video of it! **https://youtu.be/b6IZlKwep-Y**
 
 ## Tech Stack
 
